@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cg22-Winform", "cg22-project-3-guys-1-computer\cg22-Winform.csproj", "{F410E536-8A75-45DA-BF00-7B213473B366}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3DEC52C3-1717-4D7E-B2EA-EEB935FB8474} = {3DEC52C3-1717-4D7E-B2EA-EEB935FB8474}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cg22-model", "cg22-model\cg22-model.csproj", "{3DEC52C3-1717-4D7E-B2EA-EEB935FB8474}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F410E536-8A75-45DA-BF00-7B213473B366}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F410E536-8A75-45DA-BF00-7B213473B366}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F410E536-8A75-45DA-BF00-7B213473B366}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F410E536-8A75-45DA-BF00-7B213473B366}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DEC52C3-1717-4D7E-B2EA-EEB935FB8474}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DEC52C3-1717-4D7E-B2EA-EEB935FB8474}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DEC52C3-1717-4D7E-B2EA-EEB935FB8474}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DEC52C3-1717-4D7E-B2EA-EEB935FB8474}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {56B06842-106B-40F3-8755-01D4470201DD}
+	EndGlobalSection
+EndGlobal
