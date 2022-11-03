@@ -2,8 +2,8 @@
 ## Участники
 
 * Ли Евгений
-* Олег Куликов
-* Михаил Валуйский
+* Шейн Максим
+* Шафиков Александр
 
 
 [Таблица с баллами](https://docs.google.com/spreadsheets/d/1VGPpYPoO_9weL0fi0iVDaSJzbuSl-dXm-6g_coLhhFQ/edit)
