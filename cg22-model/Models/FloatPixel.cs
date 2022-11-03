@@ -23,18 +23,27 @@
             _component3 = 0.0f;
         }
 
+        /// <summary>
+        /// Get Float value, representing 1-st component
+        /// </summary>
         public float Component1
         {
             get => _component1;
             set => _component1 = value;
         }
 
+        /// <summary>
+        /// Get Float value, representing 2-nd component
+        /// </summary>
         public float Component2
         {
             get => _component2;
             set => _component2 = value;
         }
 
+        /// <summary>
+        /// Get Float value, representing 3-rd component
+        /// </summary>
         public float Component3
         {
             get => _component3;
