@@ -216,14 +216,47 @@ namespace cg22_model.Models
 
         public FloatImage GetFloatImageComponent1()
         {
+            var scaledImage = _colorSpace.ScaleTo256(_image);
+            for (int y = 0; y < _height; y++)
+            {
+                for (int x = 0; x < _width; x++)
+                {
+                    var pixel = scaledImage[x, y].Component1;
+                    scaledImage[x, y] = new FloatPixel(pixel, pixel, pixel);
+                }
+            }
+
+            return new FloatImage("P5", new RGB(), scaledImage);
         }
 
         public FloatImage GetFloatImageComponent2()
         {
+            var scaledImage = _colorSpace.ScaleTo256(_image);
+            for (int y = 0; y < _height; y++)
+            {
+                for (int x = 0; x < _width; x++)
+                {
+                    var pixel = scaledImage[x, y].Component2;
+                    scaledImage[x, y] = new FloatPixel(pixel, pixel, pixel);
+                }
+            }
+
+            return new FloatImage("P5", new RGB(), scaledImage);
         }
 
         public FloatImage GetFloatImageComponent3()
         {
+            var scaledImage = _colorSpace.ScaleTo256(_image);
+            for (int y = 0; y < _height; y++)
+            {
+                for (int x = 0; x < _width; x++)
+                {
+                    var pixel = scaledImage[x, y].Component3;
+                    scaledImage[x, y] = new FloatPixel(pixel, pixel, pixel);
+                }
+            }
+
+            return new FloatImage("P5", new RGB(), scaledImage);
         }
     }
 }
