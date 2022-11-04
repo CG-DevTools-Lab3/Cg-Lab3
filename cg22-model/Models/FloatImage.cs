@@ -116,30 +116,102 @@ namespace cg22_model.Models
 
         public bool ToRGB()
         {
+            if (_colorSpace is RGB)
+            {
+                return true;
+            }
+
+            var tmp = _colorSpace.ToRGB(_image);
+            _colorSpace = new RGB();
+            _image = _colorSpace.FromRGB(tmp);
+            return true;
         }
 
+        //TODO: Check if try-catch needed
         public bool ToHSL()
         {
+            if (_colorSpace is HSL)
+            {
+                return true;
+            }
+
+            try
+            {
+                var tmp = _colorSpace.ToRGB(_image);
+                _image = new HSL().FromRGB(tmp);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+
+            _colorSpace = new HSL();
+            return true;
         }
 
         public bool ToHSV()
         {
+            if (_colorSpace is HSV)
+            {
+                return true;
+            }
+
+            var tmp = _colorSpace.ToRGB(_image);
+            _colorSpace = new HSV();
+            _image = _colorSpace.FromRGB(tmp);
+            return true;
         }
 
         public bool ToYCbCr601()
         {
+            if (_colorSpace is YCbCr601)
+            {
+                return true;
+            }
+
+            var tmp = _colorSpace.ToRGB(_image);
+            _colorSpace = new YCbCr601();
+            _image = _colorSpace.FromRGB(tmp);
+            return true;
         }
 
         public bool ToYCbCr709()
         {
+            if (_colorSpace is YCbCr709)
+            {
+                return true;
+            }
+
+            var tmp = _colorSpace.ToRGB(_image);
+            _colorSpace = new YCbCr709();
+            _image = _colorSpace.FromRGB(tmp);
+            return true;
         }
 
         public bool ToYCoCg()
         {
+            if (_colorSpace is YCoCg)
+            {
+                return true;
+            }
+            var tmp = _colorSpace.ToRGB(_image);
+            _colorSpace = new YCoCg();
+            _image = _colorSpace.FromRGB(tmp);
+            return true;
         }
 
         public bool ToCMY()
         {
+            if (_colorSpace is CMY)
+            {
+                return true;
+            }
+
+            var tmp = _colorSpace.ToRGB(_image);
+            _colorSpace = new CMY();
+            _image = _colorSpace.FromRGB(tmp);
+            return true;
         }
 
         public FloatImage GetFloatImageComponent1()
