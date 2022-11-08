@@ -26,7 +26,24 @@ namespace cg22_model.Models.ColorSpacesSpaces
 
         public bool Check(FloatPixel[,] image)
         {
-            // TODO: implement the check method
+            int width = image.GetUpperBound(0) + 1;
+            int height = image.GetUpperBound(1) + 1;
+
+            for (int y = 0; y < height; y++)
+            {
+                for (int x = 0; x < width; x++)
+                {
+                    var pixel = image[x, y];
+                    if (pixel == null)
+                        return false;
+                    if (pixel.Component1 < 0f || pixel.Component2 < 0f || pixel.Component3 < 0f)
+                        return false;
+                    if (pixel.Component1 > 255f || pixel.Component2 > 255f || pixel.Component3 > 255f)
+                        return false;
+                }
+            }
+
+            return true;
         }
 
         public string[] GetComponentsNames()
