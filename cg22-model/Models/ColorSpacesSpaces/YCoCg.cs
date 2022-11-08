@@ -28,7 +28,11 @@
             }
             return result;
         }
-
+        /// <summary>
+        /// Convert from RGB to YCoCg
+        /// </summary>
+        /// <param name="image"> image </param>
+        /// <returns> converted image </returns>
         public FloatPixel[,] FromRGB(FloatPixel[,] image)
         {
             var width = image.GetUpperBound(0) + 1;
@@ -51,7 +55,11 @@
             }
             return result;
         }
-
+        /// <summary>
+        /// Convert from scale 256 
+        /// </summary>
+        /// <param name="image"> image </param>
+        /// <returns> converted image </returns>
         public FloatPixel[,] ScaleFrom256(FloatPixel[,] image)
         {
             var width = image.GetUpperBound(0) + 1;
@@ -71,7 +79,11 @@
             }
             return result;
         }
-
+        /// <summary>
+        /// Convert to scale 256 
+        /// </summary>
+        /// <param name="image"> image </param>
+        /// <returns> converted image </returns>
         public FloatPixel[,] ScaleTo256(FloatPixel[,] image)
         {
             var width = image.GetUpperBound(0) + 1;
@@ -93,6 +105,11 @@
             return result;
         }
 
+        /// <summary>
+        /// Checker
+        /// </summary>
+        /// <param name="image"> image </param>
+        /// <returns> Boolean value </returns>
         public bool Check(FloatPixel[,] image)
         {
             var width = image.GetUpperBound(0) + 1;
