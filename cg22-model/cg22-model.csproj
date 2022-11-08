@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\FileReaderSaver.cs" />
+    <Compile Include="Models\FloatPixel.cs" />
     <Compile Include="Models\SignatureChecker.cs" />
     <Compile Include="Models\SignatureReadersStrategies\FormatDoesntSupported.cs" />
     <Compile Include="Models\SignatureReadersStrategies\IFormat.cs" />
