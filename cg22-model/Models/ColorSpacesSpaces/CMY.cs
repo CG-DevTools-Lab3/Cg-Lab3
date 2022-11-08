@@ -91,7 +91,29 @@
 
         public bool Check(FloatPixel[,] image)
         {
-            //TODO: implement check function
+            var width = image.GetUpperBound(0) + 1;
+            var height = image.GetUpperBound(1) + 1;
+
+            for (var y = 0; y < height; y++)
+            {
+                for (var x = 0; x < width; x++)
+                {
+                    var pixel = image[x, y];
+                    if (pixel.Component1 > 1 || pixel.Component1 < 0)
+                    {
+                        return false;
+                    }
+                    if (pixel.Component2 > 1 || pixel.Component2 < 0)
+                    {
+                        return false;
+                    }
+                    if (pixel.Component3 > 1 || pixel.Component3 < 0)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
         }
 
         public string[] GetComponentsNames()
