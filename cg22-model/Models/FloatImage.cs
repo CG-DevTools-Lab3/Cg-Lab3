@@ -17,7 +17,12 @@ namespace cg22_model.Models
         private int _height;
 
         public const int ColorComponentsCount = 3;
-
+        /// <summary>
+        /// Constructor for FloatImage class
+        /// </summary>
+        /// <param name="fileMagicNumber">file signature</param>
+        /// <param name="colorSpace">choosen color space</param>
+        /// <param name="image">image</param>
         public FloatImage(string fileMagicNumber, IColorSpace colorSpace, FloatPixel[,] image)
         {
             _fileMagicNumber = fileMagicNumber;
@@ -26,7 +31,13 @@ namespace cg22_model.Models
             _width = _image.GetUpperBound(0) + 1;
             _height = _image.GetUpperBound(1) + 1;
         }
-
+        /// <summary>
+        /// Constructor for FloatImage class
+        /// </summary>
+        /// <param name="fileMagicNumber">file signature</param>
+        /// <param name="colorSpace">choosen color space</param>
+        /// <param name="width">width</param>
+        /// <param name="height">height</param>
         public FloatImage(string fileMagicNumber, IColorSpace colorSpace, int width, int height)
         {
             _fileMagicNumber = fileMagicNumber;
@@ -46,7 +57,9 @@ namespace cg22_model.Models
         {
             get => _colorSpace;
         }
-
+        /// <summary>
+        /// Parse image
+        /// </summary>
         public FloatPixel[,] Image
         {
             get
@@ -73,6 +86,10 @@ namespace cg22_model.Models
         {
             get => _height;
         }
+        /// <summary>
+        /// Create Bitmap
+        /// </summary>
+        /// <returns>bitmap</returns>
         public Bitmap GetBitmap()
         {
             var _floatBitmap = _colorSpace.ToRGB(_image);
@@ -113,7 +130,10 @@ namespace cg22_model.Models
 
             _image[x, y] = value;
         }
-
+        /// <summary>
+        /// convert to RGB
+        /// </summary>
+        /// <returns>True if all ok</returns>
         public bool ToRGB()
         {
             if (_colorSpace is RGB)
@@ -128,6 +148,10 @@ namespace cg22_model.Models
         }
 
         //TODO: Check if try-catch needed
+        /// <summary>
+        /// convert to HSL
+        /// </summary>
+        /// <returns>True if all ok</returns>
         public bool ToHSL()
         {
             if (_colorSpace is HSL)
@@ -149,7 +173,10 @@ namespace cg22_model.Models
             _colorSpace = new HSL();
             return true;
         }
-
+        /// <summary>
+        /// convert to HSV
+        /// </summary>
+        /// <returns>True if all ok</returns>
         public bool ToHSV()
         {
             if (_colorSpace is HSV)
@@ -162,7 +189,10 @@ namespace cg22_model.Models
             _image = _colorSpace.FromRGB(tmp);
             return true;
         }
-
+        /// <summary>
+        /// convert to YCbCr601
+        /// </summary>
+        /// <returns>True if all ok</returns>
         public bool ToYCbCr601()
         {
             if (_colorSpace is YCbCr601)
@@ -175,7 +205,10 @@ namespace cg22_model.Models
             _image = _colorSpace.FromRGB(tmp);
             return true;
         }
-
+        /// <summary>
+        /// convert to YCbCr709
+        /// </summary>
+        /// <returns>True if all ok</returns>
         public bool ToYCbCr709()
         {
             if (_colorSpace is YCbCr709)
@@ -188,7 +221,10 @@ namespace cg22_model.Models
             _image = _colorSpace.FromRGB(tmp);
             return true;
         }
-
+        /// <summary>
+        /// convert to YCoCg
+        /// </summary>
+        /// <returns>True if all ok</returns>
         public bool ToYCoCg()
         {
             if (_colorSpace is YCoCg)
@@ -200,7 +236,10 @@ namespace cg22_model.Models
             _image = _colorSpace.FromRGB(tmp);
             return true;
         }
-
+        /// <summary>
+        /// convert to CMY
+        /// </summary>
+        /// <returns>True if all ok</returns>
         public bool ToCMY()
         {
             if (_colorSpace is CMY)
@@ -213,7 +252,10 @@ namespace cg22_model.Models
             _image = _colorSpace.FromRGB(tmp);
             return true;
         }
-
+        /// <summary>
+        /// get first component of the image
+        /// </summary>
+        /// <returns>Grayscaled image based on this componenet</returns>
         public FloatImage GetFloatImageComponent1()
         {
             var scaledImage = _colorSpace.ScaleTo256(_image);
@@ -228,7 +270,10 @@ namespace cg22_model.Models
 
             return new FloatImage("P5", new RGB(), scaledImage);
         }
-
+        /// <summary>
+        /// get second component of the image
+        /// </summary>
+        /// <returns>Grayscaled image based on this componenet</returns>
         public FloatImage GetFloatImageComponent2()
         {
             var scaledImage = _colorSpace.ScaleTo256(_image);
@@ -243,7 +288,10 @@ namespace cg22_model.Models
 
             return new FloatImage("P5", new RGB(), scaledImage);
         }
-
+        /// <summary>
+        /// get third component of the image
+        /// </summary>
+        /// <returns>Grayscaled image based on this componenet</returns>
         public FloatImage GetFloatImageComponent3()
         {
             var scaledImage = _colorSpace.ScaleTo256(_image);
