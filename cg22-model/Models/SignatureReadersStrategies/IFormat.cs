@@ -8,8 +8,8 @@ namespace cg22_model.Models.SignatureReadersStrategies
     /// </summary>
     internal interface IFormat
     {
-        Bitmap GetBitmap(BinaryReader binReader);
+        FloatPixel[,] GetFloatImage(BinaryReader binReader);
 
-        void SaveAs(BinaryWriter binWriter, Bitmap bitmap);
+        void SaveAs(BinaryWriter binWriter, FloatPixel[,] image);
     }
 }
