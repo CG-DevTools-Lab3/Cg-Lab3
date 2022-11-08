@@ -51,7 +51,12 @@ namespace cg22_model.Models
             }
             return bitmap;
         }
-
+        /// <summary>
+        /// Save file
+        /// </summary>
+        /// <param name="filename">file path</param>
+        /// <param name="magicNumber">file signature</param>
+        /// <param name="bitmap">bitmap with pixels</param>
         public void SaveAs(string filename, string magicNumber, Bitmap bitmap)
         {
             BinaryWriter binWriter = new BinaryWriter(File.Create(filename));
