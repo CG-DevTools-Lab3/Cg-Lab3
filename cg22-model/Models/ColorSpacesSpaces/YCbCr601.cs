@@ -2,6 +2,11 @@
 {
     public class YCbCr601 : IColorSpace
     {
+        /// <summary>
+        /// component1 represents Y: Luma [0; 1]
+        /// component2 represents Cb: Chrominance orange [-1/2; 1/2]
+        /// component3 represents Cr: Chrominance green [-1/2; 1/2]
+        /// </summary>
         public FloatPixel[,] ToRGB(FloatPixel[,] image)
         {
             var width = image.GetUpperBound(0) + 1;
@@ -23,7 +28,11 @@
             }
             return result;
         }
-
+        /// <summary>
+        /// Convert from RGB to YCbCr
+        /// </summary>
+        /// <param name="image"> image </param>
+        /// <returns> converted image </returns>
         public FloatPixel[,] FromRGB(FloatPixel[,] image)
         {
             var width = image.GetUpperBound(0) + 1;
@@ -45,7 +54,11 @@
             }
             return result;
         }
-
+        /// <summary>
+        /// Convert from scale 256 
+        /// </summary>
+        /// <param name="image"> image </param>
+        /// <returns> converted image </returns>
         public FloatPixel[,] ScaleFrom256(FloatPixel[,] image)
         {
             var width = image.GetUpperBound(0) + 1;
@@ -64,7 +77,11 @@
             }
             return result;
         }
-
+        /// <summary>
+        /// Convert to scale 256 
+        /// </summary>
+        /// <param name="image"> image </param>
+        /// <returns> converted image </returns>
         public FloatPixel[,] ScaleTo256(FloatPixel[,] image)
         {
             var width = image.GetUpperBound(0) + 1;
@@ -83,7 +100,11 @@
             }
             return result;
         }
-
+        /// <summary>
+        /// Checker
+        /// </summary>
+        /// <param name="image"> image </param>
+        /// <returns> Boolean value </returns>
         public bool Check(FloatPixel[,] image)
         {
             var width = image.GetUpperBound(0) + 1;
