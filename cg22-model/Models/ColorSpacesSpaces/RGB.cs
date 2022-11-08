@@ -4,26 +4,47 @@ namespace cg22_model.Models.ColorSpacesSpaces
 {
     public class RGB : IColorSpace
     {
+        /// <summary>
+        /// Convert to RGB
+        /// </summary>
+        /// <param name="image"> image </param>
+        /// <returns> converted image </returns>
         public FloatPixel[,] ToRGB(FloatPixel[,] image)
         {
             return GetNewInstance(image);
         }
-
+        /// <summary>
+        /// Convert from RGB
+        /// </summary>
+        /// <param name="image"> image </param>
+        /// <returns> converted image </returns>
         public FloatPixel[,] FromRGB(FloatPixel[,] image)
         {
             return GetNewInstance(image);
         }
-
+        /// <summary>
+        /// Convert from scale 256 
+        /// </summary>
+        /// <param name="image"> image </param>
+        /// <returns> converted image </returns>
         public FloatPixel[,] ScaleFrom256(FloatPixel[,] image)
         {
             return GetNewInstance(image);
         }
-
+        /// <summary>
+        /// Convert to scale 256 
+        /// </summary>
+        /// <param name="image"> image </param>
+        /// <returns> converted image </returns>
         public FloatPixel[,] ScaleTo256(FloatPixel[,] image)
         {
             return GetNewInstance(image);
         }
-
+        /// <summary>
+        /// Checker
+        /// </summary>
+        /// <param name="image"> image </param>
+        /// <returns> Boolean value </returns>
         public bool Check(FloatPixel[,] image)
         {
             int width = image.GetUpperBound(0) + 1;
@@ -51,6 +72,11 @@ namespace cg22_model.Models.ColorSpacesSpaces
             return new string[] {"Red", "Green", "Blue"};
         }
 
+        /// <summary>
+        /// Gets a new copy of the image
+        /// </summary>
+        /// <param name="image"> image </param>
+        /// <returns> New instance of the image</returns>
         private FloatPixel[,] GetNewInstance(FloatPixel[,] image)
         {
             int width = image.GetUpperBound(0) + 1;
