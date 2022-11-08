@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace cg22_model.Models.ColorSpacesSpaces
 {
+    /// <summary>
+    /// Interface for all Color spaces
+    /// contains conversion, scale and check functions
+    /// </summary>
     public interface IColorSpace
     {
         FloatPixel[,] ToRGB(FloatPixel[,] image);
