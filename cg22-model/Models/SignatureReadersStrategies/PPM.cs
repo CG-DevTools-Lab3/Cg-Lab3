@@ -16,14 +16,14 @@ namespace cg22_model.Models.SignatureReadersStrategies
         /// </summary>
         /// <param name="binReader"> BinaryReader of picture file </param>
         /// <returns> Bitmap representation of picture </returns>
-        public Bitmap GetBitmap(BinaryReader binReader)
+        public FloatPixel[,] GetFloatImage(BinaryReader binReader)
         {
             int width = 0;
             int height = 0;
             int maxVal = 0;
             var sb = new StringBuilder();
 
-            // Чтение ширины
+            // Read width
             binReader.ReadByte();
             while (true)
             {
@@ -42,8 +42,8 @@ namespace cg22_model.Models.SignatureReadersStrategies
             width = Convert.ToInt32(sb.ToString());
 
             sb.Clear();
-            
-            // Чтение высоты
+
+            // Read height
             while (true)
             {
                 char inp = binReader.ReadChar();
@@ -62,7 +62,7 @@ namespace cg22_model.Models.SignatureReadersStrategies
 
             sb.Clear();
 
-            // Чтение maxVal
+            // Read maxVal
             while (true)
             {
                 char inp = binReader.ReadChar();
@@ -78,7 +78,7 @@ namespace cg22_model.Models.SignatureReadersStrategies
             }
             maxVal = Convert.ToInt32(sb.ToString());
 
-            Bitmap bitmap = new Bitmap(width, height);
+            FloatPixel[,] image = new FloatPixel[width, height];
 
             for (int y = 0; y < height; y++)
             {
@@ -104,51 +104,16 @@ namespace cg22_model.Models.SignatureReadersStrategies
                         throw new IndexOutOfRangeException("Color bigger than maxVal");
                     }
 
-                    bitmap.SetPixel(x, y, Color.FromArgb(255, r, g, b));
+                    image[x, y] = new FloatPixel(r, g, b);
                 }
             }
 
-            return bitmap;
+            return image;
         }
 
-        public void SaveAs(BinaryWriter binWriter, Bitmap bitmap)
+        public void SaveAs(BinaryWriter binWriter, FloatPixel[,] image)
         {
-            char[] width = Convert.ToString(bitmap.Width).ToCharArray();
-            char[] height = Convert.ToString(bitmap.Height).ToCharArray();
-            char[] maxVal = new char[] {'2', '5', '5'};
-
-            binWriter.Write('P');
-            binWriter.Write('6');
-
-            binWriter.Write(' ');
-            foreach (var ch in width)
-            {
-                binWriter.Write(ch);
-            }
-
-            binWriter.Write(' ');
-            foreach (var ch in height)
-            {
-                binWriter.Write(ch);
-            }
-
-            binWriter.Write(' ');
-            foreach (var ch in maxVal)
-            {
-                binWriter.Write(ch);
-            }
-
-            binWriter.Write(' ');
-            for (int y = 0; y < bitmap.Height; y++)
-            {
-                for (int x = 0; x < bitmap.Width; x++)
-                {
-                    var color = bitmap.GetPixel(x, y);
-                    binWriter.Write(color.R);
-                    binWriter.Write(color.G);
-                    binWriter.Write(color.B);
-                }
-            }
+            //TODO: implement save function
         }
     }
 }
