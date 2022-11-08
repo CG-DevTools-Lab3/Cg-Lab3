@@ -1,0 +1,284 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Users/Пользователь/Desktop/DevToolsLab3/Cg-Lab3/cg22-model",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "ZcRFJgNhvhM6kAH28Vkb5TxxGPe7FlftmernEpHWKBw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "yF4cM99miGSsrT64oV0kgkl56YkQylthgw5Gl1aJqzo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "BlPxk5mtl2kgfcZUgkEguqiSAR/EUyUTT4EdebwkQvs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "GGOovSab6ZFxRkwbTiKX/AxcXz9WU1qSZOSIhjRqq74="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/cg22_model.Models.ColorSpacesSpaces.CMY.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/cg22_model.Models.ColorSpacesSpaces.CMY.html",
+          "hash": "Qj1xS/EWrJKkHthSL1kOvFYWQMbXpAQtsPYV/2OH5B8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/cg22_model.Models.ColorSpacesSpaces.HSL.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/cg22_model.Models.ColorSpacesSpaces.HSL.html",
+          "hash": "nzJF+XqHKJs9C5TUknj5skOUH8mHPkhgEI7h61aieqo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/cg22_model.Models.ColorSpacesSpaces.HSV.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/cg22_model.Models.ColorSpacesSpaces.HSV.html",
+          "hash": "6yHPFYcS/zv1LFFWqGETzsTE5xOosjZmyFxEikt+QPU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/cg22_model.Models.ColorSpacesSpaces.IColorSpace.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/cg22_model.Models.ColorSpacesSpaces.IColorSpace.html",
+          "hash": "iWDgHRGo80mi+99iDDfBH/jmUfwX+0SNGXtcNI6wY7U="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/cg22_model.Models.ColorSpacesSpaces.RGB.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/cg22_model.Models.ColorSpacesSpaces.RGB.html",
+          "hash": "ZiiLIssswIUKbZQSBdW2g7IxdP+0bqUnCH9P6ZbXBRI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/cg22_model.Models.ColorSpacesSpaces.YCbCr601.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/cg22_model.Models.ColorSpacesSpaces.YCbCr601.html",
+          "hash": "XUSwEByK+GBQvE/WLLBby1Aol9DtANGGc3jnWqHoS6I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/cg22_model.Models.ColorSpacesSpaces.YCbCr709.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/cg22_model.Models.ColorSpacesSpaces.YCbCr709.html",
+          "hash": "/fUFEljD0wr4yW0BV94hpD+6DEQtBby+BxoIH4L3jSw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/cg22_model.Models.ColorSpacesSpaces.YCoCg.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/cg22_model.Models.ColorSpacesSpaces.YCoCg.html",
+          "hash": "Sc1QDDQH+P5gBngOzSvhjVsmohTboRfWjlg3JPjciNk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/cg22_model.Models.ColorSpacesSpaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/cg22_model.Models.ColorSpacesSpaces.html",
+          "hash": "8SCC1pmYFgSqVj5aq6XBoUTZVWR20gnCO/DggYxJdQk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/cg22_model.Models.FileReaderSaver.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/cg22_model.Models.FileReaderSaver.html",
+          "hash": "A+xTqMqP8O73BIcMGAJt/43AnTH89BcAPf/nnVYD39o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/cg22_model.Models.FloatImage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/cg22_model.Models.FloatImage.html",
+          "hash": "s/EzB0TQYD87bcEtlVgIDtAKdad60o8oOMMT1IqURWM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/cg22_model.Models.FloatPixel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/cg22_model.Models.FloatPixel.html",
+          "hash": "y9pRUsdgv7SbjpqlV4MSBDkezmEMOyj92CCi1TGmYOE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/cg22_model.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/cg22_model.Models.html",
+          "hash": "3SGyFK0IbTaKrQfexoX4/62F7XhLwHEiJKzQNyN+pOU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "obj/api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "vJ2bv5zTojPvngFbpVpJCWJCcFVsxv3WdoZjUOkQM3w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "Oa9PuD4E1hvZnCkVjUgzNBX6S00Zo5YilamTERTZo54="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 13,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

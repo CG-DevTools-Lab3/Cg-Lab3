@@ -1,4 +1,7 @@
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using cg22_model.Models;
+using cg22_model.Models.ColorSpacesSpaces;
 
 namespace cg22_project_3_guys_1_computer
 {
@@ -7,29 +10,56 @@ namespace cg22_project_3_guys_1_computer
         public Form1()
         {
             InitializeComponent();
-            открытьToolStripMenuItem.Click += OpenFile;
-            сохранитьToolStripMenuItem.Click += SaveAsFile;
+            currentColorSpace = new RGB();
+            РѕС‚РєСЂС‹С‚СЊToolStripMenuItem.Click += OpenFile;
+            СЃРѕС…СЂР°РЅРёС‚СЊToolStripMenuItem.Click += SaveAsFile;
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
-        // TODO: Check for memory leak (bitmap.Dispose)
+        public void UncheckOtherToolStripMenuItems(ToolStripMenuItem selectedMenuItem)
+        {
+            selectedMenuItem.Checked = true;
+            
+            foreach (var ltoolStripMenuItem in (from object
+                             item in selectedMenuItem.Owner.Items
+                         let ltoolStripMenuItem = item as ToolStripMenuItem
+                         where ltoolStripMenuItem != null
+                         where !item.Equals(selectedMenuItem)
+                         select ltoolStripMenuItem))
+                (ltoolStripMenuItem).Checked = false;
+            
+            selectedMenuItem.Owner.Show();
+        }
+
+        public void SetStreamsNames(string[] names)
+        {
+            toolStripMenuItemComponent1.Text = names[0];
+            toolStripMenuItemComponent2.Text = names[1];
+            toolStripMenuItemComponent3.Text = names[2];
+        }
+
         private void OpenFile(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
             string filename = openFileDialog1.FileName;
 
-            Bitmap bitmap = new Bitmap(1, 1);
             try
             {
                 var reader = new FileReaderSaver();
-                bitmap.Dispose();
-                bitmap = reader.OpenFile(filename); // "..\\..\\..\\..\\testPNM.pnm"
-                pictureBox1.Image = bitmap;
+
+                trueFloatImage = API.OpenImage(filename, currentColorSpace);
+                shownFloatImage = trueFloatImage;
+
+                pictureBox1.Image = shownFloatImage.GetBitmap();
             }
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
             }
+
+            UncheckOtherToolStripMenuItems(toolStripMenuItemComponentAll);
+            colorStreamToolStripMenuItem.Enabled = true;
         }
 
         private void SaveAsFile(object sender, EventArgs e)
@@ -50,10 +80,7 @@ namespace cg22_project_3_guys_1_computer
                 try
                 {
                     string filename = saveFileDialog1.FileName;
-                    var saver = new FileReaderSaver();
-                    var formatProperty = pictureBox1.Image.GetPropertyItem(4096);
-                    var magicNumber = new string(new char[] { Convert.ToChar(formatProperty.Value[0]), Convert.ToChar(formatProperty.Value[1]) });
-                    saver.SaveAs(filename, magicNumber, new Bitmap(pictureBox1.Image));
+                    API.SaveImage(filename, shownFloatImage);
                 }
                 catch (Exception exception)
                 {
@@ -66,6 +93,278 @@ namespace cg22_project_3_guys_1_computer
             }
 
             return;
+        }
+
+        private void toolStripMenuItemRGB_Click(object sender, EventArgs e)
+        {
+            if (toolStripMenuItemRGB.Checked)
+            {
+                return;
+            }
+
+            if (trueFloatImage == null)
+            {
+                UncheckOtherToolStripMenuItems(toolStripMenuItemRGB);
+                currentColorSpace = new RGB();
+                SetStreamsNames(currentColorSpace.GetComponentsNames());
+            }
+            else
+            {
+                if (trueFloatImage.ToRGB())
+                {
+                    shownFloatImage = trueFloatImage;
+                    pictureBox1.Image = shownFloatImage.GetBitmap();
+                    UncheckOtherToolStripMenuItems(toolStripMenuItemRGB);
+                    UncheckOtherToolStripMenuItems(toolStripMenuItemComponentAll);
+                    currentColorSpace = new RGB();
+                    SetStreamsNames(currentColorSpace.GetComponentsNames());
+                    MessageBox.Show("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
+                }
+                else
+                {
+                    MessageBox.Show("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
+                }
+            }
+        }
+
+        private void toolStripMenuItemHSL_Click(object sender, EventArgs e)
+        {
+            if (toolStripMenuItemHSL.Checked)
+            {
+                return;
+            }
+
+            if (trueFloatImage == null)
+            {
+                UncheckOtherToolStripMenuItems(toolStripMenuItemHSL);
+                currentColorSpace = new HSL();
+                SetStreamsNames(currentColorSpace.GetComponentsNames());
+            }
+            else
+            {
+                if (trueFloatImage.ToHSL())
+                {
+                    shownFloatImage = trueFloatImage;
+                    pictureBox1.Image = shownFloatImage.GetBitmap();
+                    UncheckOtherToolStripMenuItems(toolStripMenuItemHSL);
+                    UncheckOtherToolStripMenuItems(toolStripMenuItemComponentAll);
+                    currentColorSpace = new HSL();
+                    SetStreamsNames(currentColorSpace.GetComponentsNames());
+                    MessageBox.Show("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
+                }
+                else
+                {
+                    MessageBox.Show("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
+                }
+            }
+        }
+
+        private void toolStripMenuItemHSV_Click(object sender, EventArgs e)
+        {
+            if (toolStripMenuItemHSV.Checked)
+            {
+                return;
+            }
+
+            if (trueFloatImage == null)
+            {
+                UncheckOtherToolStripMenuItems(toolStripMenuItemHSV);
+                currentColorSpace = new HSV();
+                SetStreamsNames(currentColorSpace.GetComponentsNames());
+            }
+            else
+            {
+                if (trueFloatImage.ToHSV())
+                {
+                    shownFloatImage = trueFloatImage;
+                    pictureBox1.Image = shownFloatImage.GetBitmap();
+                    UncheckOtherToolStripMenuItems(toolStripMenuItemHSV);
+                    UncheckOtherToolStripMenuItems(toolStripMenuItemComponentAll);
+                    currentColorSpace = new HSV();
+                    SetStreamsNames(currentColorSpace.GetComponentsNames());
+                    MessageBox.Show("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
+                }
+                else
+                {
+                    MessageBox.Show("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
+                }
+            }
+        }
+
+        private void toolStripMenuItemYCbCr601_Click(object sender, EventArgs e)
+        {
+            if (toolStripMenuItemYCbCr601.Checked)
+            {
+                return;
+            }
+
+            if (trueFloatImage == null)
+            {
+                UncheckOtherToolStripMenuItems(toolStripMenuItemYCbCr601);
+                currentColorSpace = new YCbCr601();
+                SetStreamsNames(currentColorSpace.GetComponentsNames());
+            }
+            else
+            {
+                if (trueFloatImage.ToYCbCr601())
+                {
+                    shownFloatImage = trueFloatImage;
+                    pictureBox1.Image = shownFloatImage.GetBitmap();
+                    UncheckOtherToolStripMenuItems(toolStripMenuItemYCbCr601);
+                    UncheckOtherToolStripMenuItems(toolStripMenuItemComponentAll);
+                    currentColorSpace = new YCbCr601();
+                    SetStreamsNames(currentColorSpace.GetComponentsNames());
+                    MessageBox.Show("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
+                }
+                else
+                {
+                    MessageBox.Show("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
+                }
+            }
+        }
+
+        private void toolStripMenuItemYCbCr709_Click(object sender, EventArgs e)
+        {
+            if (toolStripMenuItemYCbCr709.Checked)
+            {
+                return;
+            }
+
+            if (trueFloatImage == null)
+            {
+                UncheckOtherToolStripMenuItems(toolStripMenuItemYCbCr709);
+                currentColorSpace = new YCbCr709();
+                SetStreamsNames(currentColorSpace.GetComponentsNames());
+            }
+            else
+            {
+                if (trueFloatImage.ToYCbCr709())
+                {
+                    shownFloatImage = trueFloatImage;
+                    pictureBox1.Image = shownFloatImage.GetBitmap();
+                    UncheckOtherToolStripMenuItems(toolStripMenuItemYCbCr709);
+                    UncheckOtherToolStripMenuItems(toolStripMenuItemComponentAll);
+                    currentColorSpace = new YCbCr709();
+                    SetStreamsNames(currentColorSpace.GetComponentsNames());
+                    MessageBox.Show("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
+                }
+                else
+                {
+                    MessageBox.Show("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
+                }
+            }
+        }
+
+        private void toolStripMenuItemYCoCg_Click(object sender, EventArgs e)
+        {
+            if (toolStripMenuItemYCoCg.Checked)
+            {
+                return;
+            }
+
+            if (trueFloatImage == null)
+            {
+                UncheckOtherToolStripMenuItems(toolStripMenuItemYCoCg);
+                currentColorSpace = new YCoCg();
+                SetStreamsNames(currentColorSpace.GetComponentsNames());
+            }
+            else
+            {
+                if (trueFloatImage.ToYCoCg())
+                {
+                    shownFloatImage = trueFloatImage;
+                    pictureBox1.Image = shownFloatImage.GetBitmap();
+                    UncheckOtherToolStripMenuItems(toolStripMenuItemYCoCg);
+                    UncheckOtherToolStripMenuItems(toolStripMenuItemComponentAll);
+                    currentColorSpace = new YCoCg();
+                    SetStreamsNames(currentColorSpace.GetComponentsNames());
+                    MessageBox.Show("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
+                }
+                else
+                {
+                    MessageBox.Show("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
+                }
+            }
+        }
+
+        private void toolStripMenuItemCMY_Click(object sender, EventArgs e)
+        {
+            if (toolStripMenuItemCMY.Checked)
+            {
+                return;
+            }
+
+            if (trueFloatImage == null)
+            {
+                UncheckOtherToolStripMenuItems(toolStripMenuItemCMY);
+                currentColorSpace = new CMY();
+                SetStreamsNames(currentColorSpace.GetComponentsNames());
+            }
+            else
+            {
+                if (trueFloatImage.ToCMY())
+                {
+                    shownFloatImage = trueFloatImage;
+                    pictureBox1.Image = shownFloatImage.GetBitmap();
+                    UncheckOtherToolStripMenuItems(toolStripMenuItemCMY);
+                    UncheckOtherToolStripMenuItems(toolStripMenuItemComponentAll);
+                    currentColorSpace = new CMY();
+                    SetStreamsNames(currentColorSpace.GetComponentsNames());
+                    MessageBox.Show("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
+                }
+                else
+                {
+                    MessageBox.Show("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
+                }
+            }
+        }
+
+        private void toolStripMenuItemComponentAll_Click(object sender, EventArgs e)
+        {
+            if (toolStripMenuItemComponentAll.Checked)
+            {
+                return;
+            }
+
+            UncheckOtherToolStripMenuItems(toolStripMenuItemComponentAll);
+            shownFloatImage = trueFloatImage;
+            pictureBox1.Image = trueFloatImage.GetBitmap();
+        }
+
+        private void toolStripMenuItemComponent1_Click(object sender, EventArgs e)
+        {
+            if (toolStripMenuItemComponent1.Checked)
+            {
+                return;
+            }
+
+            UncheckOtherToolStripMenuItems(toolStripMenuItemComponent1);
+            shownFloatImage = trueFloatImage.GetFloatImageComponent1();
+            pictureBox1.Image = shownFloatImage.GetBitmap();
+        }
+
+        private void toolStripMenuItemComponent2_Click(object sender, EventArgs e)
+        {
+            if (toolStripMenuItemComponent2.Checked)
+            {
+                return;
+            }
+
+            UncheckOtherToolStripMenuItems(toolStripMenuItemComponent2);
+            shownFloatImage = trueFloatImage.GetFloatImageComponent2();
+            pictureBox1.Image = shownFloatImage.GetBitmap();
+        }
+
+        private void toolStripMenuItemComponent3_Click(object sender, EventArgs e)
+        {
+            if (toolStripMenuItemComponent3.Checked)
+            {
+                return;
+            }
+
+            UncheckOtherToolStripMenuItems(toolStripMenuItemComponent3);
+            shownFloatImage = trueFloatImage.GetFloatImageComponent3();
+            pictureBox1.Image = shownFloatImage.GetBitmap();
         }
     }
 }

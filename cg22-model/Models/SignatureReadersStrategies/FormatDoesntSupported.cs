@@ -15,12 +15,12 @@ namespace cg22_model.Models.SignatureReadersStrategies
         /// <param name="binReader"> BinaryReader of picture file </param>
         /// <returns> Always NotSupportedException </returns>
         /// <exception cref="NotSupportedException"></exception>
-        public Bitmap GetBitmap(BinaryReader binReader)
+        public FloatPixel[,] GetFloatImage(BinaryReader binReader)
         {
             throw new NotSupportedException("Format does not supports!");
         }
 
-        public void SaveAs(BinaryWriter binWriter, Bitmap bitmap)
+        public void SaveAs(BinaryWriter binWriter, FloatPixel[,] image)
         {
             throw new NotSupportedException("Format does not supports!");
         }
