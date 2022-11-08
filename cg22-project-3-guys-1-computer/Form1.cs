@@ -11,8 +11,8 @@ namespace cg22_project_3_guys_1_computer
         {
             InitializeComponent();
             currentColorSpace = new RGB();
-            �������ToolStripMenuItem.Click += OpenFile;
-            ���������ToolStripMenuItem.Click += SaveAsFile;
+            открытьToolStripMenuItem.Click += OpenFile;
+            сохранитьToolStripMenuItem.Click += SaveAsFile;
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 

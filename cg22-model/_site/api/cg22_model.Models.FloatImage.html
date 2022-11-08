@@ -1,0 +1,777 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class FloatImage
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class FloatImage
+   ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="cg22_model.Models.FloatImage">
+  
+  
+  <h1 id="cg22_model_Models_FloatImage" data-uid="cg22_model.Models.FloatImage" class="text-break">Class FloatImage
+  </h1>
+  <div class="markdown level0 summary"><p>Represents image</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">FloatImage</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="cg22_model.Models.html">cg22_model.Models</a></h6>
+  <h6><strong>Assembly</strong>: cg22-model.dll</h6>
+  <h5 id="cg22_model_Models_FloatImage_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class FloatImage</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="cg22_model_Models_FloatImage__ctor_" data-uid="cg22_model.Models.FloatImage.#ctor*"></a>
+  <h4 id="cg22_model_Models_FloatImage__ctor_System_String_cg22_model_Models_ColorSpacesSpaces_IColorSpace_cg22_model_Models_FloatPixel_0__0___" data-uid="cg22_model.Models.FloatImage.#ctor(System.String,cg22_model.Models.ColorSpacesSpaces.IColorSpace,cg22_model.Models.FloatPixel[0:,0:])">FloatImage(String, IColorSpace, FloatPixel[,])</h4>
+  <div class="markdown level1 summary"><p>Constructor for FloatImage class</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FloatImage(string fileMagicNumber, IColorSpace colorSpace, FloatPixel[, ] image)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">fileMagicNumber</span></td>
+        <td><p>file signature</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="cg22_model.Models.ColorSpacesSpaces.IColorSpace.html">IColorSpace</a></td>
+        <td><span class="parametername">colorSpace</span></td>
+        <td><p>choosen color space</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="cg22_model.Models.FloatPixel.html">FloatPixel</a>[,]</td>
+        <td><span class="parametername">image</span></td>
+        <td><p>image</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cg22_model_Models_FloatImage__ctor_" data-uid="cg22_model.Models.FloatImage.#ctor*"></a>
+  <h4 id="cg22_model_Models_FloatImage__ctor_System_String_cg22_model_Models_ColorSpacesSpaces_IColorSpace_System_Int32_System_Int32_" data-uid="cg22_model.Models.FloatImage.#ctor(System.String,cg22_model.Models.ColorSpacesSpaces.IColorSpace,System.Int32,System.Int32)">FloatImage(String, IColorSpace, Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Constructor for FloatImage class</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FloatImage(string fileMagicNumber, IColorSpace colorSpace, int width, int height)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">fileMagicNumber</span></td>
+        <td><p>file signature</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="cg22_model.Models.ColorSpacesSpaces.IColorSpace.html">IColorSpace</a></td>
+        <td><span class="parametername">colorSpace</span></td>
+        <td><p>choosen color space</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">width</span></td>
+        <td><p>width</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">height</span></td>
+        <td><p>height</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  
+  
+  <h4 id="cg22_model_Models_FloatImage_ColorComponentsCount" data-uid="cg22_model.Models.FloatImage.ColorComponentsCount">ColorComponentsCount</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int ColorComponentsCount = 3</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="cg22_model_Models_FloatImage_ColorSpace_" data-uid="cg22_model.Models.FloatImage.ColorSpace*"></a>
+  <h4 id="cg22_model_Models_FloatImage_ColorSpace" data-uid="cg22_model.Models.FloatImage.ColorSpace">ColorSpace</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IColorSpace ColorSpace { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cg22_model.Models.ColorSpacesSpaces.IColorSpace.html">IColorSpace</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cg22_model_Models_FloatImage_FileMagicNumber_" data-uid="cg22_model.Models.FloatImage.FileMagicNumber*"></a>
+  <h4 id="cg22_model_Models_FloatImage_FileMagicNumber" data-uid="cg22_model.Models.FloatImage.FileMagicNumber">FileMagicNumber</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string FileMagicNumber { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cg22_model_Models_FloatImage_Height_" data-uid="cg22_model.Models.FloatImage.Height*"></a>
+  <h4 id="cg22_model_Models_FloatImage_Height" data-uid="cg22_model.Models.FloatImage.Height">Height</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Height { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cg22_model_Models_FloatImage_Image_" data-uid="cg22_model.Models.FloatImage.Image*"></a>
+  <h4 id="cg22_model_Models_FloatImage_Image" data-uid="cg22_model.Models.FloatImage.Image">Image</h4>
+  <div class="markdown level1 summary"><p>Parse image</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FloatPixel[, ] Image { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cg22_model.Models.FloatPixel.html">FloatPixel</a>[,]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cg22_model_Models_FloatImage_Width_" data-uid="cg22_model.Models.FloatImage.Width*"></a>
+  <h4 id="cg22_model_Models_FloatImage_Width" data-uid="cg22_model.Models.FloatImage.Width">Width</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Width { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="cg22_model_Models_FloatImage_GetBitmap_" data-uid="cg22_model.Models.FloatImage.GetBitmap*"></a>
+  <h4 id="cg22_model_Models_FloatImage_GetBitmap" data-uid="cg22_model.Models.FloatImage.GetBitmap">GetBitmap()</h4>
+  <div class="markdown level1 summary"><p>Create Bitmap</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Bitmap GetBitmap()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Drawing.Bitmap</span></td>
+        <td><p>bitmap</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cg22_model_Models_FloatImage_GetFloatImageComponent1_" data-uid="cg22_model.Models.FloatImage.GetFloatImageComponent1*"></a>
+  <h4 id="cg22_model_Models_FloatImage_GetFloatImageComponent1" data-uid="cg22_model.Models.FloatImage.GetFloatImageComponent1">GetFloatImageComponent1()</h4>
+  <div class="markdown level1 summary"><p>get first component of the image</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FloatImage GetFloatImageComponent1()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cg22_model.Models.FloatImage.html">FloatImage</a></td>
+        <td><p>Grayscaled image based on this componenet</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cg22_model_Models_FloatImage_GetFloatImageComponent2_" data-uid="cg22_model.Models.FloatImage.GetFloatImageComponent2*"></a>
+  <h4 id="cg22_model_Models_FloatImage_GetFloatImageComponent2" data-uid="cg22_model.Models.FloatImage.GetFloatImageComponent2">GetFloatImageComponent2()</h4>
+  <div class="markdown level1 summary"><p>get second component of the image</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FloatImage GetFloatImageComponent2()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cg22_model.Models.FloatImage.html">FloatImage</a></td>
+        <td><p>Grayscaled image based on this componenet</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cg22_model_Models_FloatImage_GetFloatImageComponent3_" data-uid="cg22_model.Models.FloatImage.GetFloatImageComponent3*"></a>
+  <h4 id="cg22_model_Models_FloatImage_GetFloatImageComponent3" data-uid="cg22_model.Models.FloatImage.GetFloatImageComponent3">GetFloatImageComponent3()</h4>
+  <div class="markdown level1 summary"><p>get third component of the image</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FloatImage GetFloatImageComponent3()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cg22_model.Models.FloatImage.html">FloatImage</a></td>
+        <td><p>Grayscaled image based on this componenet</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cg22_model_Models_FloatImage_GetPixel_" data-uid="cg22_model.Models.FloatImage.GetPixel*"></a>
+  <h4 id="cg22_model_Models_FloatImage_GetPixel_System_Int32_System_Int32_" data-uid="cg22_model.Models.FloatImage.GetPixel(System.Int32,System.Int32)">GetPixel(Int32, Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FloatPixel GetPixel(int x, int y)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">x</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">y</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cg22_model.Models.FloatPixel.html">FloatPixel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cg22_model_Models_FloatImage_SetPixel_" data-uid="cg22_model.Models.FloatImage.SetPixel*"></a>
+  <h4 id="cg22_model_Models_FloatImage_SetPixel_System_Int32_System_Int32_cg22_model_Models_FloatPixel_" data-uid="cg22_model.Models.FloatImage.SetPixel(System.Int32,System.Int32,cg22_model.Models.FloatPixel)">SetPixel(Int32, Int32, FloatPixel)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetPixel(int x, int y, FloatPixel value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">x</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">y</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="cg22_model.Models.FloatPixel.html">FloatPixel</a></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cg22_model_Models_FloatImage_ToCMY_" data-uid="cg22_model.Models.FloatImage.ToCMY*"></a>
+  <h4 id="cg22_model_Models_FloatImage_ToCMY" data-uid="cg22_model.Models.FloatImage.ToCMY">ToCMY()</h4>
+  <div class="markdown level1 summary"><p>convert to CMY</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ToCMY()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True if all ok</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cg22_model_Models_FloatImage_ToHSL_" data-uid="cg22_model.Models.FloatImage.ToHSL*"></a>
+  <h4 id="cg22_model_Models_FloatImage_ToHSL" data-uid="cg22_model.Models.FloatImage.ToHSL">ToHSL()</h4>
+  <div class="markdown level1 summary"><p>convert to HSL</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ToHSL()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True if all ok</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cg22_model_Models_FloatImage_ToHSV_" data-uid="cg22_model.Models.FloatImage.ToHSV*"></a>
+  <h4 id="cg22_model_Models_FloatImage_ToHSV" data-uid="cg22_model.Models.FloatImage.ToHSV">ToHSV()</h4>
+  <div class="markdown level1 summary"><p>convert to HSV</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ToHSV()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True if all ok</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cg22_model_Models_FloatImage_ToRGB_" data-uid="cg22_model.Models.FloatImage.ToRGB*"></a>
+  <h4 id="cg22_model_Models_FloatImage_ToRGB" data-uid="cg22_model.Models.FloatImage.ToRGB">ToRGB()</h4>
+  <div class="markdown level1 summary"><p>convert to RGB</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ToRGB()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True if all ok</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cg22_model_Models_FloatImage_ToYCbCr601_" data-uid="cg22_model.Models.FloatImage.ToYCbCr601*"></a>
+  <h4 id="cg22_model_Models_FloatImage_ToYCbCr601" data-uid="cg22_model.Models.FloatImage.ToYCbCr601">ToYCbCr601()</h4>
+  <div class="markdown level1 summary"><p>convert to YCbCr601</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ToYCbCr601()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True if all ok</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cg22_model_Models_FloatImage_ToYCbCr709_" data-uid="cg22_model.Models.FloatImage.ToYCbCr709*"></a>
+  <h4 id="cg22_model_Models_FloatImage_ToYCbCr709" data-uid="cg22_model.Models.FloatImage.ToYCbCr709">ToYCbCr709()</h4>
+  <div class="markdown level1 summary"><p>convert to YCbCr709</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ToYCbCr709()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True if all ok</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cg22_model_Models_FloatImage_ToYCoCg_" data-uid="cg22_model.Models.FloatImage.ToYCoCg*"></a>
+  <h4 id="cg22_model_Models_FloatImage_ToYCoCg" data-uid="cg22_model.Models.FloatImage.ToYCoCg">ToYCoCg()</h4>
+  <div class="markdown level1 summary"><p>convert to YCoCg</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ToYCoCg()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True if all ok</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
