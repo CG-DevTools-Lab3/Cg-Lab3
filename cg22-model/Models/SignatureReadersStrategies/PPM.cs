@@ -113,7 +113,44 @@ namespace cg22_model.Models.SignatureReadersStrategies
 
         public void SaveAs(BinaryWriter binWriter, FloatPixel[,] image)
         {
-            //TODO: implement save function
+            int intWidth = image.GetUpperBound(0) + 1;
+            int intHeight = image.GetUpperBound(1) + 1;
+            char[] width = Convert.ToString(intWidth).ToCharArray();
+            char[] height = Convert.ToString(intHeight).ToCharArray();
+            char[] maxVal = new char[] { '2', '5', '5' };
+
+            binWriter.Write('P');
+            binWriter.Write('6');
+
+            binWriter.Write(' ');
+            foreach (var ch in width)
+            {
+                binWriter.Write(ch);
+            }
+
+            binWriter.Write(' ');
+            foreach (var ch in height)
+            {
+                binWriter.Write(ch);
+            }
+
+            binWriter.Write(' ');
+            foreach (var ch in maxVal)
+            {
+                binWriter.Write(ch);
+            }
+
+            binWriter.Write(' ');
+            for (int y = 0; y < intHeight; y++)
+            {
+                for (int x = 0; x < intWidth; x++)
+                {
+                    var color = image[x, y];
+                    binWriter.Write(Convert.ToByte(Convert.ToInt32(Math.Round(color.Component1))));
+                    binWriter.Write(Convert.ToByte(Convert.ToInt32(Math.Round(color.Component2))));
+                    binWriter.Write(Convert.ToByte(Convert.ToInt32(Math.Round(color.Component3))));
+                }
+            }
         }
     }
 }
