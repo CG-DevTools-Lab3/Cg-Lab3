@@ -215,10 +215,42 @@
             return result;
         }
 
+        /// <summary>
+        /// Checks if the image array is in given ranges:
+        /// H: Hue [0; 360]
+        /// S: [0; 1]
+        /// V: [0; 1]
+        /// </summary>
         public bool Check(FloatPixel[,] image)
         {
-            // TODO: implement the check method
-            throw new NotImplementedException();
+            var width = image.GetUpperBound(0) + 1;
+            var height = image.GetUpperBound(1) + 1;
+            var result = new FloatPixel[width, height];
+
+            for (var y = 0; y < height; y++)
+            {
+                for (var x = 0; x < width; x++)
+                {
+                    var H = image[x, y].Component1;
+                    var S = image[x, y].Component2;
+                    var L = image[x, y].Component3;
+
+                    if (!(0f <= H && H <= 360))
+                    {
+                        return false;
+                    }
+                    if (!(0f <= S && S <= 1f))
+                    {
+                        return false;
+                    }
+                    if (!(0f <= L && L <= 1f))
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
         }
 
         public string[] GetComponentsNames()
