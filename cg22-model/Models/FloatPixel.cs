@@ -8,14 +8,21 @@
         private float _component1;
         private float _component2;
         private float _component3;
-
+        /// <summary>
+        /// constructor for pixel
+        /// </summary>
+        /// <param name="component1">first component</param>
+        /// <param name="component2">second component</param>
+        /// <param name="component3">third component</param>
         public FloatPixel(float component1, float component2, float component3)
         {
             _component1 = component1;
             _component2 = component2;
             _component3 = component3;
         }
-
+        /// <summary>
+        /// Base constructor for pixel
+        /// </summary>
         public FloatPixel()
         {
             _component1 = 0.0f;
