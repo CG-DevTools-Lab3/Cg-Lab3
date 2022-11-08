@@ -7,6 +7,12 @@
         /// </summary>
     public class HSL : IColorSpace
     {
+        /// <summary>
+        /// Convert one pixel represented with FloatPixel class from HSL to RGB format
+        /// </summary>
+        /// <param name="pixel">pixel that you need to conver 
+        /// represented with FloatPixel array</param>
+        /// <returns>Converted pixel represented with FloatPixel class</returns>
         public static FloatPixel ToRGBSinglePixel(FloatPixel pixel)
         {
             var result = new FloatPixel();
@@ -60,7 +66,12 @@
 
             return result;
         }
-
+        /// <summary>
+        /// Convert image represented with FloatPixel class from HSL to RGB format
+        /// </summary>
+        /// <param name="image">image that you need to conver 
+        /// represented with FloatPixel matrix</param>
+        /// <returns>Converted image represented with FloatPixel class matrix</returns>
         public FloatPixel[,] ToRGB(FloatPixel[,] image)
         {
             var width = image.GetUpperBound(0) + 1;
@@ -78,7 +89,11 @@
 
             return result;
         }
-
+        /// <summary>
+        /// Covert pixel from RGB to HSL
+        /// </summary>
+        /// <param name="pixel">pixel that you need to convert</param>
+        /// <returns>converted pixel</returns>
         public static FloatPixel FromRGBSinglePixel(FloatPixel pixel)
         {
             var result = new FloatPixel();
@@ -132,7 +147,11 @@
             
             return result;
         }
-
+        /// <summary>
+        /// Covert image from RGB to HSL format
+        /// </summary>
+        /// <param name="image">image that you need to convert</param>
+        /// <returns>Converted image</returns>
         public FloatPixel[,] FromRGB(FloatPixel[,] image)
         {
             var width = image.GetUpperBound(0) + 1;
@@ -183,7 +202,11 @@
 
             return result;
         }
-
+        /// <summary>
+        /// Scale image to it's limits
+        /// </summary>
+        /// <param name="image">image you need to Scale</param>
+        /// <returns>Scaled image</returns>
         public FloatPixel[,] ScaleTo256(FloatPixel[,] image)
         {
             var width = image.GetUpperBound(0) + 1;
@@ -221,6 +244,8 @@
         /// S: [0; 1]
         /// V: [0; 1]
         /// </summary>
+        /// <param name="image">image you need to check</param>
+        /// <returns>True if all ok</returns>
         public bool Check(FloatPixel[,] image)
         {
             var width = image.GetUpperBound(0) + 1;
@@ -252,7 +277,10 @@
 
             return true;
         }
-
+        /// <summary>
+        /// Get components names
+        /// </summary>
+        /// <returns>components names</returns>
         public string[] GetComponentsNames()
         {
             return new string[] { "Hue", "Saturation", "Lightness" };
