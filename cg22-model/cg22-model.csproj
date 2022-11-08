@@ -64,7 +64,6 @@
   <ItemGroup>
     <Compile Include="Models\ColorSpacesSpaces\IColorSpace.cs" />
     <Compile Include="Models\FileReaderSaver.cs" />
-    <Compile Include="Models\FloatPixel.cs" />
     <Compile Include="Models\SignatureChecker.cs" />
     <Compile Include="Models\FloatImage.cs" />
     <Compile Include="Models\ColorSpacesSpaces\RGB.cs" />
